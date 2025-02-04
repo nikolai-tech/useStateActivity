@@ -64,13 +64,13 @@ function TaskManager() {
  
      <ul> 
        {filteredTasks.map((task) => ( 
-         <li key={task.id} className={task.completed ? "completed" : ""}>
+         <li key={task.id}>
          <input 
            type="checkbox" 
            checked={task.completed} 
            onChange={() => toggleTask(task.id)} 
          />
-         <span>{task.text}</span>
+         <span className={task.completed ? "completed" : ""}>{task.text}</span>
          <button onClick={() => removeTask(task.id)}>❌</button>
        </li>
        ))} 
