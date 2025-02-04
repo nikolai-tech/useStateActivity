@@ -32,21 +32,52 @@ body {
   padding: 0; 
  } 
   
- li { 
-  display: flex; 
-  justify-content: space-between; 
-  padding: 10px; 
-  background: white; 
-  margin: 5px 0; 
-  border-radius: 5px; 
-  cursor: pointer; 
- } 
-  
- .completed { 
+.completed { 
   text-decoration: line-through; 
   color: gray; 
  } 
 
  input[type="checkbox"] {
   cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  gap: 10px; /* Space between elements */
+  padding: 10px;
+  background: white;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+/* Task text styling */
+li span {
+  flex: 1; /* Take up remaining space */
+  text-align: left;
+  padding: 0 5px;
+}
+
+/* Delete button alignment */
+li button {
+  margin-left: auto; /* Push delete button to right */
+  flex-shrink: 0;
+}
+
+li:hover {
+  background-color: #d6eaf8;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.8;
 }
